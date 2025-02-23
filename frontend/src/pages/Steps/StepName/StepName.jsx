@@ -4,8 +4,8 @@ import Card from "../../../components/shared/Card/Card";
 import TextInput from "./../../../components/shared/TextInput/TextInput";
 import styles from "./StepName.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setName } from "../../../store/activateSlice";
-
+import { setName } from "../../../store/activateSlice"; 
+ 
 const StepName = ({ onNext }) => {
     const { name } = useSelector((state) => state.activate);
 

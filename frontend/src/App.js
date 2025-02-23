@@ -8,25 +8,32 @@ import SemiProtectedRoute from "./routes/SemiProtectedRoute";
 import Activate from "./pages/activate/Activate";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Rooms from "./pages/Rooms/Rooms";
+import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<GuestRoute element={<Home />} />} />
-        <Route
-          path="/authenticate"
-          element={<GuestRoute element={<Authenticate />} />}
-        />
-        <Route
-          path="/activate"
-          element={<SemiProtectedRoute element={<Activate />} />}
-        />
-        <Route path="/rooms" element={<ProtectedRoute element={<Rooms />} />} />
-      </Routes>
-    </BrowserRouter>
-  );
+    const { loading } = useLoadingWithRefresh();
+    return loading ? (
+        "Loading...."
+    ) : (
+        <BrowserRouter>
+            <Navigation />
+            <Routes>
+                <Route path="/" element={<GuestRoute element={<Home />} />} />
+                <Route
+                    path="/authenticate"
+                    element={<GuestRoute element={<Authenticate />} />}
+                />
+                <Route
+                    path="/activate"
+                    element={<SemiProtectedRoute element={<Activate />} />}
+                />
+                <Route
+                    path="/rooms"
+                    element={<ProtectedRoute element={<Rooms />} />}
+                />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;

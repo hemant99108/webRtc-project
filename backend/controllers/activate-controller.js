@@ -29,7 +29,7 @@ class ActivateController {
         
         // Define image path
         const imagePath = `${Date.now()}-${Math.round(Math.random() * 1e9)}.png`;
-        const storageDir = path.resolve(__dirname, "../storage");
+        const storageDir = path.resolve(__dirname, "../storage"); 
         
         // Ensure the storage directory exists
         if (!fs.existsSync(storageDir)) {
