@@ -1,6 +1,6 @@
 const { mongoose } = require("mongoose");
 
-async function dbconnect() {
+async function dbconnect() { 
   try {
     const url = process.env.MONGO_DB_URL;
 
