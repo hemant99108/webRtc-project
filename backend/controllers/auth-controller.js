@@ -36,7 +36,7 @@ class AuthController {
             res.status(500).json({ message: "Failed to send OTP" });
         }
     }
-
+ 
     async verifyOtp(req, res) {
         const { otp, hash, phone } = req.body;
         if (!otp || !hash || !phone) {

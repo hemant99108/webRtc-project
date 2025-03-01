@@ -9,11 +9,12 @@ import Activate from "./pages/activate/Activate";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Rooms from "./pages/Rooms/Rooms";
 import { useLoadingWithRefresh } from "./hooks/useLoadingWithRefresh";
+import Loader from "./components/shared/Loader/Loader";
 
 function App() {
     const { loading } = useLoadingWithRefresh();
     return loading ? (
-        "Loading...."
+        <Loader message="Loading ... please wait..."/>
     ) : (
         <BrowserRouter>
             <Navigation />

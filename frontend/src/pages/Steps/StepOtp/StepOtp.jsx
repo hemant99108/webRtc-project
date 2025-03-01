@@ -19,6 +19,9 @@ const StepOtp = () => {
   const {phone,hash}=useSelector((store)=>store.auth.otp);
 
   async function submit(){
+    if (!otp||!hash || !phone) {
+        return;
+    }
      try {
         const {data}=await verifyOtp({otp,phone,hash});
         console.log(data);
