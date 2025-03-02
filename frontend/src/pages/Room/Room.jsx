@@ -11,7 +11,7 @@ const Room = () => {
     const { id: roomId } = useParams();
     const [room, setRoom] = useState(null);
 
-    const { clients, provideRef, handleMute } = useWebRTC(roomId, user);
+    const { eclients, provideRef, handleMute } = useWebRTC(roomId, user);
 
     const navigate = useNavigate();
 
